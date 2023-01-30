@@ -1,0 +1,104 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.filha {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+body{
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	background-color: #00BFFF;
+	font-size: 30px;
+}
+
+input{
+	margin: 40px 50px;
+	height: 25px;
+	border-radius: 5px;
+}
+
+#titulo{
+	margin-top: 10%;
+	font-size: 100px;
+	text-transform: uppercase;
+}
+
+#img1{
+	position: absolute;
+	left: -50px;
+	bottom: 0;
+	height: 400px;
+}
+
+#avaliacao{
+	margin-top: 400px;
+	height: 150px;
+	width: 500px;
+	border-radius: 4px;
+	padding: 8px 4px;
+}
+.filha .rating{
+	right: 80px;
+	top: 300px;
+	position: absolute;
+	height: 100px;
+	width: 500px;
+	text-align: center;
+}
+.rating input{
+	display: none;
+}
+.rating label{
+	float: right;
+	font-size: 70px;
+	color: lightgray;
+	margin: 0 5px;
+	text-shadow: 1px 1px #bbb;
+}
+.rating label:before{
+	content: '★';
+	cursor: pointer;
+}
+.rating input:checked ~ label{
+	color: gold;
+	text-shadow: 1px 1px #c60;
+}
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label{
+	color: gold;
+	text-shadow: 1px 1px #c60;
+}
+.rating input:checked > label:hover,
+.rating input:checked > label:hover ~ label{
+	color: gold;
+	text-shadow: 1px 1px goldenrod;
+}
+a.logo{
+	font-size: 35px;
+	font-weight: bold;
+	color: white;
+	padding: 0 100px;
+	line-height: 80px;
+	text-decoration: none;
+}
+.btn{
+	position: relative;
+	border: none;
+	outline: none;
+	background: #45f3ff;
+	width: 300px;
+	margin-top: 30px;
+	margin-left: 100px;
+	font-weight: 500;
+	border-radius: 2px;
+	padding: 10px 25px;
+	font-size: 20px;
+	cursor: pointer;
+	text-decoration: none;
+	text-align: center;
+}

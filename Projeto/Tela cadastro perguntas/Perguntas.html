@@ -1,0 +1,81 @@
+<html ng-app="cadastroPerguntas">
+	<head>
+		<title>EducaKids</title>
+		<link href="estilos.css" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Sono&family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+		<script>
+			angular.module("cadastroPerguntas", []);
+			angular.module("cadastroPerguntas").controller("cadastroPerguntasCtrl", ['$scope', '$window', function ($scope, $window) {
+				$scope.app = "Cadastro de Perguntas";
+				$scope.perguntas = [
+				];
+				$scope.adicionarPergunta = function (pergunta) {
+					$scope.perguntas.push(angular.copy(pergunta));
+					delete $scope.pergunta;
+					$scope.perguntaForm.$setPristine();
+				};
+				$scope.apagarPerguntas = function (perguntas) {
+					$scope.perguntas = perguntas.filter(function (pergunta) {
+						if (!pergunta.selecionado) return pergunta;
+					});
+				};
+				$scope.isPerguntaSelecionado = function (perguntas) {
+					return perguntas.some(function (pergunta) {
+						return pergunta.selecionado;
+					});
+				};
+				$scope.click = function () {
+					$window.location.href = "../TelaPrincipal/Principal.html";
+				};
+			}]);
+		</script>
+	</head>
+	<body ng-controller="cadastroPerguntasCtrl">
+		<nav>
+		<h1 style="margin-top:20px; text-align:center">{{app}}</h1>
+		</nav>
+		<table class="paleBlueRows">
+			<thead>
+			<tr>
+				<th></th>
+				<th>Perguntas</th>
+			</tr>
+			</thead>
+			<tr ng-repeat="pergunta in perguntas">
+				<td><input type="checkbox" ng-model="pergunta.selecionado"/></td>
+				<td>{{pergunta.questao}}</td>
+			</tr>
+		</table>
+		<div class="formulario">
+			<form name="perguntaForm">
+				<textarea class="form-questao" type="text" ng-model="pergunta.questao" name="questao" placeholder="Escreva aqui a pergunta" ng-required="true"></textarea>
+				<input class="form-opcao" type="text" ng-model="pergunta.opcaoA" name="opcaoA" placeholder="Opção A" ng-required="true"/>
+				<input class="form-opcao" type="text" ng-model="pergunta.opcaoB" name="opcaoB" placeholder="Opção B" ng-required="true"/>
+				<input class="form-opcao" type="text" ng-model="pergunta.opcaoC" name="opcaoC" placeholder="Opção C" ng-required="true"/>
+				<input class="form-opcao" type="text" ng-model="pergunta.opcaoD" name="opcaoD" placeholder="Opção D" ng-required="true"/>
+			</form>
+			<div ng-show="perguntaForm.questao.$error.required && perguntaForm.questao.$dirty" class="alert">
+				Por favor, preencha a Questão!
+			</div>
+			<div ng-show="perguntaForm.opcaoA.$error.required && perguntaForm.opcaoA.$dirty" class="alert">
+				Por favor, preencha a Opção A!
+			</div>
+			<div ng-show="perguntaForm.opcaoB.$error.required && perguntaForm.opcaoB.$dirty" class="alert">
+				Por favor, preencha a Opção B!
+			</div>
+			<div ng-show="perguntaForm.opcaoC.$error.required && perguntaForm.opcaoC.$dirty" class="alert">
+				Por favor, preencha a Opção C!
+			</div>
+			<div ng-show="perguntaForm.opcaoD.$error.required && perguntaForm.opcaoD.$dirty" class="alert">
+				Por favor, preencha a Opção D!
+			</div>
+			<button class="btn" ng-click="adicionarPergunta(pergunta)" ng-disabled="perguntaForm.$invalid">Adicionar Pergunta</button>
+			<button class="btn" ng-click="apagarPerguntas(perguntas)" ng-if="isPerguntaSelecionado(perguntas)">Apagar Pergunta</button>
+			<button class="btn" ng-disabled="perguntas.length <= 0" ng-click="click()">Salvar Quiz</button>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<html ng-app="pergunta">
+	<head>
+		<title>EducaKids</title>
+		<link href="estilos.css" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Sono&family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+		<script>
+			angular.module("pergunta", []);
+			angular.module("pergunta").controller("perguntaCtrl", [ '$scope', '$window', function ($scope, $window) {
+				$scope.app = "Perguntas";
+				$scope.resposta = '';
+				$scope.apagar = function () {
+					$scope.resposta = '';
+					$scope.perguntaForm.$setPristine();
+				};
+				$scope.checkTrue = function () {
+					if($scope.resposta == "-0.75 e 2") $window.location.href = "../Tela perguntas/Pergunta.html";
+					else alert("Resposta errada")
+				};
+			}]);
+		</script>
+	</head>
+	<body ng-controller="perguntaCtrl">
+		<a href="..\TelaPrincipal\Principal.html" class="logo">DiverteQuiz</a>
+		<div class = "container">
+			<img src="imagens/duvida.png" alt="Logo" id = "imagem_fundo">
+			<div class="box">
+				<div class="formulario">
+					<h1>Encontre as raízes de −4𝑥²+5𝑥+6=0</h1>
+					<form name="perguntaForm" class="form-opcoes">
+						<label><input type="radio" name="opcoes" id = "opcaoA" value="2 e -2" ng-model="resposta"/>a)2 e -2</label>
+						<label><input type="radio" name="opcoes" id = "opcaoB" value="-2 e 0.75" ng-model="resposta"/>b)-2 e 0.75</label>
+						<label><input type="radio" name="opcoes" id = "opcaoC" value="0.75 e -0.75" ng-model="resposta"/>c)0.75 e -0.75</label>
+						<label><input type="radio" name="opcoes" id = "opcaoD" value="-0.75 e 2" ng-model="resposta"/>d)-0.75 e 2</label>
+					</form>
+					<button class="btn" ng-click="apagar()">Limpar</button>
+					<button class="btn" ng-disabled="resposta == ''" ng-click="checkTrue()">Próximo</button>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

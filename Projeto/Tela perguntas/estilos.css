@@ -1,0 +1,145 @@
+body{
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	background-color: #00BFFF;
+	font-size: 25px;
+}
+
+.container{
+	display: flex;
+  	justify-content: center;
+}
+
+.filha {
+	width: 300px;
+	height: 150px;
+	position: absolute;
+	top: 35%;
+	margin-top: -25px;
+	text-align: center;
+}
+nav{
+	top: 0;
+	height: 80px;
+	width: 120%;
+	background: #4495e3;
+}
+a.logo{
+	font-size: 35px;
+	font-weight: bold;
+	color: white;
+	padding: 0 100px;
+	line-height: 80px;
+	text-decoration: none;
+}
+
+input {
+  position: absolute;
+  left: 0px;
+}
+
+#logo{
+	position: absolute;
+	right: 50px;
+	top: 5px;
+	color: black;
+	font-size: 45px;
+}
+
+#imagem_fundo{
+	position: absolute;
+	left: 5px;
+	bottom: 0px;
+}
+.box{
+	position: absolute;
+	width: 600px;
+	height: 600px;
+	background: #27374d;
+	border-radius: 8px;
+	overflow: hidden;
+}
+.box::before{
+	content: '';
+	top: -50%;
+	left: -50%;
+	position: absolute;
+	width: 600px;
+	height: 600px;
+	background: linear-gradient(0deg,transparent,#45f3ff,#45f3ff);
+	animation: animate 3s linear infinite;
+	transform-origin: bottom right;
+}
+.box::after{
+	content: '';
+	top: -50%;
+	left: -50%;
+	position: absolute;
+	width: 600px;
+	height: 600px;
+	transform-origin: bottom right;
+	background: linear-gradient(0deg,transparent,#45f3ff,#45f3ff);
+	animation: animate 3s linear infinite;
+	animation-delay: -1.5s;
+	
+}
+@keyframes animate{
+	0%{
+		transform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(360deg);
+	}
+}
+.formulario{
+	position: absolute;
+	inset: 4px;
+	border-radius: 8px;
+	background: #27374d;
+	z-index: 10;
+	padding: 50px 40px;
+	display: flex;
+	flex-direction: column;
+}
+.formulario h1{
+	color: #1068e0;
+	font-weight: 600;
+	text-align: left;
+	letter-spacing: 0.1em;
+	margin-top: 10px;
+	text-align: center;
+}
+.form-opcoes input{
+	position: relative;
+	margin-left: 50px;
+	margin-top: 20px;
+}
+.form-opcoes label{
+	float: right;
+	font-size: 30px;
+	color: lightgray;
+	margin: 0 5px;
+	text-shadow: 1px 1px #bbb;
+	top: 2px;
+	cursor: pointer;
+}
+.form-opcoes{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+.btn{
+	position: relative;
+	border: none;
+	outline: none;
+	background: #45f3ff;
+	width: 300px;
+	margin-top: 30px;
+	margin-left: 100px;
+	font-weight: 500;
+	border-radius: 2px;
+	padding: 10px 25px;
+	font-size: 20px;
+	cursor: pointer;
+	text-decoration: none;
+	text-align: center;
+}

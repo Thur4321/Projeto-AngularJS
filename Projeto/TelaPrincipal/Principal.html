@@ -1,0 +1,76 @@
+<html ng-app="inicio">
+<head>
+	<title>Página Inicial</title>
+	<link href="estilos.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Sono&family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+	<script>
+		angular.module("inicio", []);
+		angular.module("inicio").controller("inicioCtrl", function ($scope) {
+			$scope.app = "inicio";
+		});
+	</script>
+</head>
+<body ng-controller="inicioCtrl" style="background-color:#59a3f7">
+	<nav>
+		<label class="logo">DiverteQuiz</label>
+		<ul ng-class="{show:showActive}">
+			<li><a href="C:\Users\arthu\OneDrive\Documents\Facul\Projeto\Tela cadastro perguntas\Perguntas.html" ng-mouseover="active=true" ng-mouseleave="active = false" ng-class="{active:active}">Criar Quiz</a></li>
+			<li><a href="#" ng-mouseover="active2=true" ng-mouseleave="active2 = false" ng-class="{active:active2}">Meus Quizzes</a></li>
+			<li><a href="#" ng-mouseover="active3=true" ng-mouseleave="active3 = false" ng-class="{active:active3}">Pontuação</a></li>
+			<li><a href="C:\Users\arthu\OneDrive\Documents\Facul\Projeto\Tela feedback\Avaliacao.html" ng-mouseover="active4=true" ng-mouseleave="active4 = false" ng-class="{active:active4}">FeedBack</a></li>
+			<li><a href="#" ng-mouseover="active5=true" ng-mouseleave="active5 = false" ng-class="{active:active5}">Perfil</a></li>
+		</ul>
+		<label id="icon">
+			<i class="fas fa-bars" ng-click="showActive=!showActive"></i>
+		</label>
+	</nav>
+	<div class="top">
+		<h1 style="color:white; margin-top:20px; text-align:center">Mais jogados</h2>
+		<div class="jumbotron" ng-mouseover="hover=true" ng-mouseleave="hover = false">
+			<div class="container">
+				<img src="https://www.matematica.pt/images/faq/operacoes.png" ng-class="{overlay:hover}">
+				<form action="C:\Users\arthu\OneDrive\Documents\Facul\Projeto\Tela perguntas\Pergunta.html">
+					<button class="btn" ng-show="hover">Matemática</button>
+				</form>
+			</div>
+		</div>
+		<div class="jumbotron" ng-mouseover="hover2=true" ng-mouseleave="hover2 = false">
+			<div class="container">	
+				<img src="https://drd.com.br/wp-content/uploads/2019/01/DICAS-PORTUGUES.jpg" ng-class="{overlay:hover2}">
+				<button class="btn" ng-show="hover2">Português</button>
+			</div>
+		</div>
+		<div class="jumbotron" ng-mouseover="hover3=true" ng-mouseleave="hover3 = false">
+			<div class="container">	
+				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvypGGOv0nBz_CEWNGNcoH5OArzeHXJnRBhw&usqp=CAU" ng-class="{overlay:hover3}">
+				<button class="btn" ng-show="hover3">Ciências</button>
+			</div>
+		</div>
+		<div class="jumbotron" ng-mouseover="hover4=true" ng-mouseleave="hover4 = false">
+			<div class="container">
+				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlOH2r-7_80g6X0-912SK7BGH7L3LxERKj1Q&usqp=CAU" ng-class="{overlay:hover4}">
+				<button class="btn" ng-show="hover4">História</button>
+			</div>
+		</div>
+		<div class="jumbotron" ng-mouseover="hover5=true" ng-mouseleave="hover5 = false">
+			<div class="container">
+				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6iCA7tL7G7zdNQ3DUOjyPEmVgc1-ryR0WTg&usqp=CAU" ng-class="{overlay:hover5}">
+				<button class="btn" ng-show="hover5">Geografia</button>
+			</div>
+		</div>
+		<div class="jumbotron" ng-mouseover="hover6=true" ng-mouseleave="hover6 = false">
+			<div class="container">
+				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPj-H5YAUOpx9P56mglE7nPgX_b5mQFfgihg&usqp=CAU" ng-class="{overlay:hover6}">
+				<button class="btn" ng-show="hover6">Filosofia</button>
+			</div>
+		</div>
+	</div>
+	<img src="imagens/criancas.gif" id = "img1">
+	<img src="imagens/barco.png" id = "img2">
+	<footer id = "rodape"></footer>
+</body>
+</html>

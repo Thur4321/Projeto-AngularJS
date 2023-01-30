@@ -1,0 +1,61 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.filha {
+  width: 300px;
+  height: 150px;
+  position: absolute;
+  top: 75%;
+  margin-top: -25px;
+  text-align: center;
+}
+
+body{
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	background-color: #00BFFF;
+}
+
+#logo{
+	position: absolute;
+	top: 0px;
+	left: 380px;
+}
+
+#rodape{
+	width: 100%;
+	height: 150px;
+	background-image: url("imagens/bolhas_estourando.gif");
+	position: absolute;
+	bottom: 0;
+	z-index: 11;
+}
+
+input{
+	height: 25px;
+	border-radius: 5px;
+	border-color: white
+}
+
+#botao_jogar{
+	width: 100px;
+	height: 50px;
+	border-radius: 10px;
+}
+
+#img1{
+	position: absolute;
+	left: 0px;
+	top: 20%;
+	z-index: 10;
+}
+
+#img2{
+	position: absolute;
+	right: 10px;
+	z-index: 10;
+}
+button{
+	cursor: pointer;
+}

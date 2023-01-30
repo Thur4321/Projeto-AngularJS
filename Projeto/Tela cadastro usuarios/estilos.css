@@ -1,0 +1,203 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.filha {
+  width: 300px;
+  height: 150px;
+  position: absolute;
+  top: 50%;
+  margin-top: -25px;
+  text-align: center;
+}
+
+body{
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	background-color: #00BFFF;
+	font-size: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+
+p{font-size: 90px;}
+
+input{
+	height: 25px;
+	border-radius: 5px;
+	border-color: white;
+}
+
+#titulo{
+	margin-top: 20%;
+	font-size: 100px;
+}
+
+#img1{
+	position: absolute;
+	right: 20px;
+	bottom: 0;
+}
+
+#img2{
+	position: absolute;
+	left: 20px;
+	bottom: 0;
+}
+
+#img3{
+	position: absolute;
+	left: 40px;
+	top: -16px;
+}
+label.logo{
+	font-size: 35px;
+	font-weight: bold;
+	color: white;
+	left: 60px;
+	line-height: 80px;
+	top: 0;
+	position: absolute;
+}
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.box{
+	position: absolute;
+	width: 600px;
+	height: 600px;
+	background: #27374d;
+	border-radius: 8px;
+	overflow: hidden;
+	top: 50px;
+}
+.box::before{
+	content: '';
+	top: -50%;
+	left: -50%;
+	position: absolute;
+	width: 600px;
+	height: 600px;
+	background: linear-gradient(0deg,transparent,#45f3ff,#45f3ff);
+	animation: animate 3s linear infinite;
+	transform-origin: bottom right;
+}
+.box::after{
+	content: '';
+	top: -50%;
+	left: -50%;
+	position: absolute;
+	width: 600px;
+	height: 600px;
+	transform-origin: bottom right;
+	background: linear-gradient(0deg,transparent,#45f3ff,#45f3ff);
+	animation: animate 3s linear infinite;
+	animation-delay: -1.5s;
+	
+}
+@keyframes animate{
+	0%{
+		transform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(360deg);
+	}
+}
+.form{
+	position: absolute;
+	inset: 4px;
+	border-radius: 8px;
+	background: #27374d;
+	z-index: 10;
+	padding: 50px 40px;
+	display: flex;
+	flex-direction: column;
+}
+.form h1{
+	color: #1068e0;
+	font-weight: 600;
+	text-align: left;
+	letter-spacing: 0.1em;
+}
+.inputBox{
+	position: relative;
+	width: 300px;
+	margin-top: 30px;
+}
+.inputBox input{
+	position: relative;
+	width: 170%;
+	top: -10px;
+	padding: 30px 10px 10px;
+	background: transparent;
+	border: none;
+	outline: none;
+	font-size: 0.7em;
+	letter-spacing: 0.05em;
+	z-index: 10;
+	color: #8f8f8f;
+}
+.inputBox span{
+	position: absolute;
+	left: -8px;
+	top: -15px;
+	padding: 25px 10px 10px;
+	font-size: 1em;
+	color: #8f8f8f;
+	pointer-events: none;
+	letter-spacing: 0.05em;
+	transition: 0.5s;
+	z-index: 9;
+}
+.inputBox i{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 170%;
+	height: 2px;
+	background: #1068e0;
+	transition: 0.5s;
+	pointer-events: none;
+}
+.inputBox input:valid ~ i,
+.inputBox input:focus ~ i{
+	height: 50px;
+}
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span{
+	transform: translate(0, -65%);
+	font-size: 0.6em;
+	color: #1068e0;
+}
+.links{
+	display: flex;
+	justify-content: center;
+}
+.links a{
+	margin: 20px 0;
+	font-size: 1.1em;
+	color: #acc3e8;
+	text-decoration: none;
+}
+.links a:hover{
+	color: #45f3ff;
+}
+.bLogin{
+	position: relative;
+	left: 20%;
+	border: none;
+	outline: none;
+	background: #45f3ff;
+	width: 300px;
+	font-weight: 500;
+	border-radius: 2px;
+	padding: 8px 25px;
+	font-size: 40px;
+	cursor: pointer;
+	text-decoration: none;
+	text-align: center;
+}	

@@ -1,0 +1,165 @@
+.container {
+	margin-top: 100px;
+	left: 0;
+}
+
+body{
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	background-color: #00BFFF;
+	font-size: 30px;
+}
+
+p{font-size: 90px;}
+
+#rodape{
+	width: 100%;
+	height: 100px;
+	background-image: url("imagens/bolhas_estourando.gif");
+	position: absolute;
+	bottom: 0;
+}
+
+#logo{
+	left: 10%;
+	width: 1300px;
+	height: 500px;
+	background-image: url("imagens/DiverteQuiz.png");
+	background-size: 50%;
+	background-repeat: no-repeat;
+	position: absolute;
+}
+.box{
+	left: 65%;
+	position: absolute;
+	width: 440px;
+	height: 464px;
+	background: #27374d;
+	border-radius: 8px;
+	overflow: hidden;
+}
+.box::before{
+	content: '';
+	top: -50%;
+	left: -50%;
+	position: absolute;
+	width: 440px;
+	height: 464px;
+	background: linear-gradient(0deg,transparent,#45f3ff,#45f3ff);
+	animation: animate 3s linear infinite;
+	transform-origin: bottom right;
+}
+.box::after{
+	content: '';
+	top: -50%;
+	left: -50%;
+	position: absolute;
+	width: 440px;
+	height: 464px;
+	transform-origin: bottom right;
+	background: linear-gradient(0deg,transparent,#45f3ff,#45f3ff);
+	animation: animate 3s linear infinite;
+	animation-delay: -1.5s;
+	
+}
+@keyframes animate{
+	0%{
+		transform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(360deg);
+	}
+}
+.form{
+	position: absolute;
+	inset: 4px;
+	border-radius: 8px;
+	background: #27374d;
+	z-index: 10;
+	padding: 50px 40px;
+	display: flex;
+	flex-direction: column;
+}
+.form h2{
+	color: #1068e0;
+	font-weight: 600;
+	text-align: left;
+	letter-spacing: 0.1em;
+	margin-top: 10px;
+}
+.inputBox{
+	position: relative;
+	width: 300px;
+	margin-top: 20px;
+}
+.inputBox input{
+	position: relative;
+	width: 120%;
+	padding: 20px 10px 10px;
+	background: transparent;
+	border: none;
+	outline: none;
+	font-size: 1em;
+	letter-spacing: 0.05em;
+	
+	color: #8f8f8f;
+	z-index: 10;
+}
+.inputBox span{
+	position: absolute;
+	top: 20px;
+	left: 0;
+	font-size: 1em;
+	color: #8f8f8f;
+	pointer-events: none;
+	letter-spacing: 0.05em;
+	transition: 0.5s;
+	z-index: 9;
+}
+.inputBox i{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 120%;
+	height: 2px;
+	background: #1068e0;
+	transition: 0.5s;
+	pointer-events: none;
+}
+.inputBox input:valid ~ i,
+.inputBox input:focus ~ i{
+	height: 54px;
+}
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span{
+	transform: translate(0, -140%);
+	font-size: 0.6em;
+	color: #1068e0;
+}
+.links{
+	display: flex;
+	justify-content: center;
+}
+.links a{
+	margin: 20px 0;
+	font-size: 0.8em;
+	color: #acc3e8;
+	text-decoration: none;
+}
+.links a:hover{
+	color: #45f3ff;
+}
+.bLogin{
+	position: relative;
+	border: none;
+	outline: none;
+	background: #45f3ff;
+	width: 100px;
+	left: 100px;
+	font-weight: 500;
+	border-radius: 2px;
+	padding: 8px 25px;
+	font-size: 20px;
+	cursor: pointer;
+	text-decoration: none;
+	text-align: center;
+}	
